@@ -1,0 +1,15 @@
+Project ideas, ordered by priority.
+	* A lecture hall finder (and other interesting or important places) on campus.
+		Generic implementation using SVG and XML to represent a map and places.
+		- Highlight building parts, display possible routes trough the building and room floor number.
+		- Similar to http://www.chalmers.se/HyperText/Karta/load.html but more useful and mobile.
+
+	* Remote media-player controller.
+		A control application on the phone.
+		- Possibly using the home (wireless) network.
+			At least a module for one media-player (C/C++).
+		- Or using an existing interface (network?/bluetooth?/IR?) for one or more media-players.
+
+	* A recipe book, which displays possible dishes based on available ingredients.
+		- Local SQL database.
+			Remote update.

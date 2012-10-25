@@ -1,0 +1,43 @@
+[ Document should contain the following information; (in Swedish)
+* Valt och beskrivet projekt
+* Motiverad licens
+* Lista de features (inte i detalj) som ni tror att ni hinner med under
+  projektet.
+* Lista de roller ni har i ert projekt (utvecklare, projektledare…..)
+* Vilka personer som har vilka roller (man kan ha fler)
+]
+
+Chosen project and description 
+------------------------------
+We have chosen to create a lecture hall finder, the idea is to make it easy
+to find a location based on a name. The design will be generalized as a precise
+location finder, possibly displaying individual rooms and how to find them with
+additional information such as possible entrances, floor number and also a path
+from the current location.
+
+License
+-------
+<motivation><suitable opensource license here> apache-2?
+
+Features
+--------
+ * Displaying a very precise location, possibly a single room.
+ * Show a path to the given location from the current position, if known.
+ * Show usable entrances to reach the given location.
+ * Additional text describing the location and how to reach it.
+ * Additional information about the location such as the building/entrance
+   street address.
+ * Location grouping based on both building and preconfigured groups.
+ * A XML database containing all interesting locations.
+ 
+Roles
+-----
+ * Project leader
+ * Developer
+ <others?>
+
+Project members
+---------------
+ * Daniel Berntsson   (Developer)
+ * Peter Hjalmasrsson (Developer)
+ * Erik Wiklund       (Developer)
