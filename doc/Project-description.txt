@@ -1,12 +1,3 @@
-[ Document should contain the following information; (in Swedish)
-* Valt och beskrivet projekt
-* Motiverad licens
-* Lista de features (inte i detalj) som ni tror att ni hinner med under
-  projektet.
-* Lista de roller ni har i ert projekt (utvecklare, projektledare…..)
-* Vilka personer som har vilka roller (man kan ha fler)
-]
-
 Chosen project and description 
 ------------------------------
 We have chosen to create a lecture hall finder, the idea is to make it easy
@@ -17,7 +8,11 @@ from the current location.
 
 License
 -------
-<motivation><suitable opensource license here> apache-2?
+Since we intend to use Google map services which require according to their tos
+(https://developers.google.com/maps/terms) (§9.1) that our service must be
+freely and publicly accessible to end users. Therefore we choose the Apache 2.0
+license because its open and finally it is the liccense recommended for
+Android. See (http://source.android.com/source/licenses.html).  
 
 Features
 --------
@@ -34,10 +29,10 @@ Roles
 -----
  * Project leader
  * Developer
- <others?>
+ * Tester
 
 Project members
 ---------------
- * Daniel Berntsson   (Developer)
- * Peter Hjalmasrsson (Developer)
- * Erik Wiklund       (Developer)
+ * Daniel Berntsson  (Developer)
+ * Peter Hjalmarsson (Developer, Tester)
+ * Erik Wiklund      (Project leader, Developer)
