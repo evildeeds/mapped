@@ -1,5 +1,5 @@
 
-   <Application Name>
+   FRAPP, Find Room Application.
    Copyright 2012 Daniel Berntsson, Peter Hjalmarsson and Erik Wiklund
 
    Licensed under the Apache License, Version 2.0 (the "License");
