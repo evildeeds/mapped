@@ -1,0 +1,25 @@
+1 - Introduction
+1.1 - Purpose of application
+We have chosen to create a lecture hall finder, the idea is to make it easy
+to find a location based on a name. Not just for older students but mostly for the new ones that never been to Chalmers before (Or any other University).
+The design will be generalized as a precise location finder, possibly displaying individual rooms and how to find them with
+additional information such as possible entrances, floor number and also a path from the current location. 
+
+
+1.2 - General characteristics of application
+The application is a collaboration of three parts: Map, Setting and Search.
+The Map is a mapping over the area you are in and how you go from there. Settings changes how you view the map and small changes overall
+and Search is what you want to show on your map
+
+1.3 - Scope of application
+Our App is limited to the schools, but since we will use the google maps service you will be able to get to our school(s) from anywhere.
+We are not in any way associated with Google.
+
+1.4 - Objectives and success criteria of the project
+● Use of google maps service
+● GPS for exact coordinates of the rooms
+● Add building annotations
+● Add Sample of rooms/buildings (Springa runt)
+
+1.5 - Definitions, acronyms and abbreviations
+Building Annotation: Draw on set map, showing entrance(s)
