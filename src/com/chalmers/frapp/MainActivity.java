@@ -22,6 +22,9 @@ public class MainActivity extends Activity {
         AutoCompleteTextView w = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1);
         w.setThreshold(1);
         w.setAdapter(adapter);
+ 
+        new LocationXMLParser(getAssets());
+        
         //finish();
     }
 
