@@ -1,6 +1,5 @@
 package com.chalmers.frapp;
 
-import android.content.res.Resources;
 import android.util.Log;
 import android.content.res.AssetManager;
 import org.xml.sax.Attributes;
