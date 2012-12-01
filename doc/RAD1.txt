@@ -1,25 +1,118 @@
 1 - Introduction
 1.1 - Purpose of application
-We have chosen to create a lecture hall finder, the idea is to make it easy
-to find a location based on a name. Not just for older students but mostly for the new ones that never been to Chalmers before (Or any other University).
-The design will be generalized as a precise location finder, possibly displaying individual rooms and how to find them with
-additional information such as possible entrances, floor number and also a path from the current location. 
-
+We have chosen to create a lecture hall finder.
+The idea is to make it easy to find a location based on a name, mainly for new students that never been to Chalmers before (or any other University).
+The design will be generalized as a precise location finder with the possibly displaying individual rooms, how to find them
+and additional information such as possible entrances, floor number and also a path from the current location. 
 
 1.2 - General characteristics of application
 The application is a collaboration of three parts: Map, Setting and Search.
-The Map is a mapping over the area you are in and how you go from there. Settings changes how you view the map and small changes overall
-and Search is what you want to show on your map
+The Map is a mapping over the area you are in and how you go from there.
+Settings changes how you view the map and small changes overall.
+Search is the location you want to find.
 
 1.3 - Scope of application
-Our App is limited to the schools, but since we will use the google maps service you will be able to get to our school(s) from anywhere.
+The scope of our project is more detailed information about rooms at Chalmers campus Johanneberg,
+but since we will use the Google Maps service you will be able to get to our school(s) from anywhere.
 We are not in any way associated with Google.
 
 1.4 - Objectives and success criteria of the project
-● Use of google maps service
+● Use of Google Maps service
 ● GPS for exact coordinates of the rooms
 ● Add building annotations
 ● Add Sample of rooms/buildings (Springa runt)
 
 1.5 - Definitions, acronyms and abbreviations
 Building Annotation: Draw on set map, showing entrance(s)
+
+2 - Proposed application
+
+2.1 - Overview
+Frapp will show you what which building it is in, and the room you are looking for.
+
+2.2 - Functional requirements
+2.2.1 Database-related requirements
+
+2.2.1.1 - Load rooms
+Scenario: Loading rooms from database
+Trigger: Starting FRAPP
+Precondition: Rooms cached.
+Basic path
+The user starts frapp
+
+2.3 - User related requirements
+2.3.1 - Location-related requirements
+
+2.3.1.1 - View Search
+Scenario: View search fields
+Trigger: Starting FRAPP
+Precondition: An input box for finding locations is displayed.
+Basic path
+The user starts frapp, shows a search field for rooms and buildings.
+2.3.1.2 - View Map
+Scenario: View Map
+Trigger: Starting FRAPP
+Precondition: The starting intent contains a valid location.
+Basic path
+Will go directly to map showing the room/building chosen location.
+2.3.1.3 - View Map
+Scenario: View Map
+Trigger: Starting FRAPP
+Precondition: The starting intent contains an invalid location.
+Basic path
+Will go directly to the search field filled with the provided location.
+2.3.1.4 - View Map
+Scenario: View map
+Trigger: Swiping the map
+Precondition: The map view is active
+Basic path
+Moves from the map to the search field, with a right-to-left swipe
+2.3.1.5
+Scenario: View Search
+Trigger: The search fields are correctly filled and you pressed the "go button"
+Precondition: The search activity is active
+Basic path
+The user selects from the fields and goes to the map.
+2.3.1.6
+Scenario: View Search
+Trigger: Swiping from left-to-right 
+Precondition: The search field is correctly filled.
+Basic path
+Goes back to Map from Search, in case you accidently returned to Search from Map.
+2.3.1.7
+Scenario: View Search
+Trigger: Swiping from left-to-right 
+Precondition: The search field is incorrectly filled.
+Basic path
+Nothing happens.
+2.3.1.8
+Scenario: View map
+Trigger: Use two fingers pulling together/apart
+Precondition: The map activity is active
+Basic path
+Zooms in or out depending how you move your fingers.
+
+
+2.4 Non-functional requirements
+2.4.1 FRAPP shall be selectable as a location finder on Android.
+2.4.2 The database shall be XML-based.
+
+3 Test cases
+
+3.1 Find location
+Test case description: Test that Android lists FRAPP as a location finder.
+Precondtion: Application not started.
+Test steps:
+ - Start an application which utilizes intents for finding a location.
+ - Select a location.
+ - Select FRAPP.
+ - Observe FRAPP start and attemp to find the choosen location.
+Related requirement: 2.3.1.2, 2.3.1.3, 2.4.1
+
+3.2 Find location
+Test case description: Test that choosing a valid location results in the map view getting displayed.
+Precondtion: Application started.
+Test steps:
+ - Enter or choose a valid location.
+ - Proceed to the map view.
+ - Observe that the correct location is displayed.
