@@ -23,3 +23,82 @@ We are not in any way associated with Google.
 
 1.5 - Definitions, acronyms and abbreviations
 Building Annotation: Draw on set map, showing entrance(s)
+
+2 - Proposed application
+
+2.1 - Overview
+Frapp will show you what which building it is in, and the room you are looking for.
+
+2.2 - Functional requirements
+2.2.1 Database-related requirements
+
+2.2.1.1 - Load rooms
+Scenario: Loading rooms from database
+Trigger: Starting FRAPP
+Precondition: Rooms cached.
+Basic path
+The user starts frapp
+
+2.3 - Contribution-related requirements
+We leave this one blank because: If we fill in every room and building so the user 
+just choose from a list, there is little for the user to contribute with.
+
+2.4 - User related requirements
+2.4.1 - Location-related requirements
+
+2.4.1.1 - View Search
+Scenario: View search fields
+Trigger: Starting FRAPP
+Precondition: Checks if copy&paste isn't a room/building name
+Basic path
+The user starts frapp, shows search fields for rooms and buildings.
+2.4.1.2 - 
+Scenario: View Map
+Trigger: Starting FRAPP
+Precondition: If you got a room/building name in the copy&paste memory
+Basic path
+Will go directly to map showing the room/building chosen by the copy memory.
+2.4.1.3
+Scenario: View map
+Trigger: Swiping the map
+Precondition: the map is active
+Basic path
+Moves from the map to the search field, with a right-to-left swipe
+2.4.1.4
+Scenario: View Search
+Trigger: the search fields are correctly filled and you pressed the "go button"
+Precondition: the search activity is active
+Basic path
+The user selects from the fields and goes to the map.
+2.4.1.5
+Scenario: View Search
+Trigger: Swiping from left-to-right 
+Precondition: Having a correctly active map or the search fields correct or copy&paste memory have a room/building name.
+Basic path
+Goes from search to map, if you made a mistake of going to the search and wants to go back to the map.
+2.4.1.6
+Scenario: View map
+Trigger: Use two fingers pulling together/apart
+Precondition: The map activity is active
+Basic path
+Zooms in or out depending how you move your fingers.
+
+
+2.5 Non-functional requirements
+2.5.1 The database shall be XML-based.
+
+3 Test cases
+To-be-covered-later!
+
+
+
+
+
+
+
+
+
+
+
+
+
