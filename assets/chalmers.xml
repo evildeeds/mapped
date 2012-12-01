@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<buildings>
+ <building name="EDIT">
+  <entreces>
+   <entrence id="1">
+    <adress>Hörsalsvägen 9</adress>
+    <geopoint lat="57.688314" long="11.979051" />
+   </entrence>
+   <entrence id="2">
+    <adress>Hörsalsvägen 10?</adress>
+    <geopoint lat="57.687819" long="11.979183" />
+   </entrence>
+   <entrence id="3">
+    <adress>Hörsalsvägen 11</adress>
+    <geopoint lat="57.687782" long="11.979718" />
+   </entrence>
+   <entrence id="4">
+    <adress>Rännvägen 6B</adress>
+    <geopoint lat="57.686798" long="11.978309" />
+   </entrence>
+   <entrence id="5">
+    <adress>Manskingränd 2</adress>
+    <geopoint lat="57.688251" long="11.978554" />
+   </entrence>
+  </entreces>
+  <locations>
+   <location name="3217">
+    <entrence>2</entrence>
+    <entrence>3</entrence>
+    <entrence>4</entrence>
+    <entrence>5</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.687444" long="11.978743" />
+    <description>Våning 3</description>
+   </location>
+  </locations>
+ </building>
+</buildings>
