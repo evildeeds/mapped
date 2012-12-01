@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<buildings>
+ <building name="EDIT">
+  <entreces>
+   <entrence id="1">
+    <adress>Hörsalsvägen 9</adress>
+    <geopoint lat="57.688314" long="11.979051" />
+   </entrence>
+   <entrence id="2">
+    <adress>Hörsalsvägen 10?</adress>
+    <geopoint lat="57.687819" long="11.979183" />
+   </entrence>
+   <entrence id="3">
+    <adress>Hörsalsvägen 11</adress>
+    <geopoint lat="57.687782" long="11.979718" />
+   </entrence>
+   <entrence id="4">
+    <adress>Rännvägen 6B</adress>
+    <geopoint lat="57.686798" long="11.978309" />
+   </entrence>
+   <entrence id="5">
+    <adress>Manskingränd 2</adress>
+    <geopoint lat="57.688251" long="11.978554" />
+   </entrence>
+    <entrence id="HC">
+    <adress>Manskingränd</adress>
+    <geopoint lat="57.688095" long="11.979741" />
+   </entrence>
+    <entrence id="HCEX">
+    <adress>Manskingränd</adress>
+    <geopoint lat="57.688375" long="11.979713" />
+   </entrence>
+    <entrence id="HB1">
+    <adress>Manskingränd</adress>
+    <geopoint lat="57.689112" long="11.978851" />
+   </entrence>
+   <entrence id="HB4">
+    <adress>Manskingränd</adress>
+    <geopoint lat="57.688418" long="11.97949" />
+   </entrence>
+   <entrence id="HB">
+    <adress>Manskingränd</adress>
+    <geopoint lat="57.688765" long="11.979152" />
+   </entrence>
+   <entrence id="HBEX4">
+    <adress>Manskingränd</adress>
+    <geopoint lat="57.688479" long="11.97971" />
+   </entrence>
+    <entrence id="HBEX1">
+    <adress>Manskingränd</adress>
+    <geopoint lat="57.689178" long="11.979069" />
+   </entrence>
+   <entrence id="HAEX1">
+    <adress>Manskingränd</adress>
+    <geopoint lat="57.689776" long="11.978598" />
+   </entrence>
+   <entrence id="HAEX4">
+    <adress>Manskingränd</adress>
+    <geopoint lat="57.689273" long="11.979035" />
+   </entrence>
+   <entrence id="HA">
+    <adress>Manskingränd</adress>
+    <geopoint lat="57.689474" long="11.978631" />
+   </entrence>
+  </entreces>
+  <locations>
+   <location name="3207">
+    <entrence>2</entrence>
+    <entrence>3</entrence>
+    <entrence>4</entrence>
+    <entrence>5</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.68764" long="11.978983" />
+    <description>Våning 3</description>
+   </location>
+   <location name="3209">
+    <entrence>2</entrence>
+    <entrence>3</entrence>
+    <entrence>4</entrence>
+    <entrence>5</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.687616" long="11.978891" />
+    <description>Våning 3</description>
+   </location>
+   <location name="3211">
+    <entrence>2</entrence>
+    <entrence>3</entrence>
+    <entrence>4</entrence>
+    <entrence>5</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.687593" long="11.978809" />
+    <description>Våning 3</description>
+   </location>
+   <location name="3213">
+    <entrence>2</entrence>
+    <entrence>3</entrence>
+    <entrence>4</entrence>
+    <entrence>5</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.68757" long="11.978727" />
+    <description>Våning 3</description>
+   </location>
+   <location name="3215">
+    <entrence>2</entrence>
+    <entrence>3</entrence>
+    <entrence>4</entrence>
+    <entrence>5</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.687547" long="11.978645" />
+    <description>Våning 3</description>
+   </location>
+   <location name="3217">
+    <entrence>2</entrence>
+    <entrence>3</entrence>
+    <entrence>4</entrence>
+    <entrence>5</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.687514" long="11.978541" />
+    <description>Våning 3</description>
+   </location>
+   <location name="HC4">
+    <entrence>HC</entrence>
+    <entrence>HCEX</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.687929" long="11.980003" />
+    <description>Hörsal</description>
+   </location>
+   <location name="HC3">
+    <entrence>HC</entrence>
+    <entrence>HCEX</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.68804" long="11.97998" />
+    <description>Hörsal</description>
+   </location>
+   <location name="HC2">
+    <entrence>HC</entrence>
+    <entrence>HCEX</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.68822" long="11.979827" />
+    <description>Hörsal</description>
+   </location>
+   <location name="HC1">
+    <entrence>HC</entrence>
+    <entrence>HCEX</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.688298" long="11.97967" />
+    <description>Hörsal</description>
+   </location>
+   <location name="HB4">
+    <entrence>HBEX4</entrence>
+    <entrence>HBEX1</entrence>
+    <entrence>HB</entrence>
+    <entrence>HB4</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.68851" long="11.979547" />
+    <description>Hörsal</description>
+   </location>
+   <location name="HB3">
+    <entrence>HBEX4</entrence>
+    <entrence>HBEX1</entrence>
+    <entrence>HB</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.688707" long="11.979368" />
+    <description>Hörsal</description>
+   </location>
+   <location name="HB2">
+    <entrence>HBEX4</entrence>
+    <entrence>HBEX1</entrence>
+    <entrence>HB</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.688896" long="11.979187" />
+    <description>Hörsal</description>
+   </location>
+   <location name="HB1">
+    <entrence>HBEX4</entrence>
+    <entrence>HBEX1</entrence>
+    <entrence>HB</entrence>
+    <entrence>HB1</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.689085" long="11.979004" />
+    <description>Hörsal</description>
+   </location>
+   <location name="HA4">
+    <entrence>HAEX4</entrence>
+    <entrence>HAEX1</entrence>
+    <entrence>HA</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.68931" long="11.978905" />
+    <description>Hörsal</description>
+   </location>
+   <location name="HA3">
+    <entrence>HAEX4</entrence>
+    <entrence>HAEX1</entrence>
+    <entrence>HA</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.689417" long="11.978865" />
+    <description>Hörsal</description>
+   </location>
+   <location name="HA2">
+    <entrence>HAEX4</entrence>
+    <entrence>HAEX1</entrence>
+    <entrence>HA</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.689592" long="11.978705" />
+    <description>Hörsal</description>
+   </location>
+    <location name="HA1">
+    <entrence>HAEX4</entrence>
+    <entrence>HAEX1</entrence>
+    <entrence>HA</entrence>
+    <catergory>grupprum</catergory>
+    <geopoint lat="57.689682" long="11.978534" />
+    <description>Hörsal</description>
+   </location>
+  </locations>
+ </building>
+</buildings>
