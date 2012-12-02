@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.view.Menu;
 import android.widget.*;
 
-public class MainActivity extends Activity {
+public class FindLocationActivity extends Activity {
 
     private static final String[] CONTENT = new String[] {
         "HA, HA2", "HA, HA3", "HB, HB2", "HB, HB3", "EDIT, Studion"
@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_find_location);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, CONTENT);
@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
+        getMenuInflater().inflate(R.menu.activity_find_location, menu);
         return true;
     }
 }
