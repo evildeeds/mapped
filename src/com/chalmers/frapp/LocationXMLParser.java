@@ -11,7 +11,7 @@ import javax.xml.parsers.SAXParserFactory;
 
 public class LocationXMLParser extends DefaultHandler {
 
-	public LocationXMLParser(AssetManager m) {
+	public LocationXMLParser(AssetManager manager, String fileName) {
 		// TODO Auto-generated constructor stub
 		try {
 			// getting SAXParserFactory instance
@@ -21,7 +21,7 @@ public class LocationXMLParser extends DefaultHandler {
 			SAXParser saxParser = saxParserFactory.newSAXParser();
 
 			// Parsing XML Document by calling parse method of SAXParser class
-			saxParser.parse(m.open("chalmers.xml"), this);
+			saxParser.parse(manager.open(fileName), this);
 
 		} catch (Exception e) {
 			e.printStackTrace();

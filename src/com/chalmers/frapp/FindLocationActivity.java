@@ -23,7 +23,7 @@ public class FindLocationActivity extends Activity {
         w.setThreshold(1);
         w.setAdapter(adapter);
  
-        new LocationXMLParser(getAssets());
+        new LocationXMLParser(getAssets(), "chalmers.xml");
         
         //finish();
     }
