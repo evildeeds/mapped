@@ -1,31 +1,28 @@
-package com.chalmers.frapp;
+package com.chalmers.frapp.database;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 import android.util.Log;
-import android.content.res.AssetManager;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-public class LocationXMLParser extends DefaultHandler {
+public class Parser extends DefaultHandler {
 
-	public LocationXMLParser(AssetManager manager, String fileName) {
-		// TODO Auto-generated constructor stub
-		try {
-			// getting SAXParserFactory instance
-			SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
-
-			// Getting SAXParser object from AXParserFactory instance
-			SAXParser saxParser = saxParserFactory.newSAXParser();
-
-			// Parsing XML Document by calling parse method of SAXParser class
-			saxParser.parse(manager.open(fileName), this);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	public Parser(InputStream inputStream) throws ParserConfigurationException, SAXException, IOException {
+		// getting SAXParserFactory instance
+		SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+	
+		// Getting SAXParser object from AXParserFactory instance
+		SAXParser saxParser = saxParserFactory.newSAXParser();
+	
+		// Parsing XML Document by calling parse method of SAXParser class
+		saxParser.parse(inputStream, this);
 	}
 
     public void startElement(String uri, String localName, String qName,
@@ -49,8 +46,6 @@ public class LocationXMLParser extends DefaultHandler {
     }
  
     public void endDocument() throws SAXException {
-        // you can do something here for example send
-        // the Channel object somewhere or whatever.
     }
 
 }

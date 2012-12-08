@@ -1,4 +1,4 @@
-package com.chalmers.frapp;
+package com.chalmers.frapp.database;
 
 import com.google.android.maps.GeoPoint;
 

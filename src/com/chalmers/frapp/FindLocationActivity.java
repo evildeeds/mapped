@@ -1,5 +1,7 @@
 package com.chalmers.frapp;
 
+import com.chalmers.frapp.database.Parser;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -23,8 +25,12 @@ public class FindLocationActivity extends Activity {
         w.setThreshold(1);
         w.setAdapter(adapter);
  
-        new LocationXMLParser(getAssets(), "chalmers.xml");
-        
+        try {
+        	new Parser(getAssets().open("chalmers.xml"));
+        } catch(Exception ex) {
+        	ex.printStackTrace();
+        }
+
         //finish();
     }
 

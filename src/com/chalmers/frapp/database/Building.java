@@ -1,4 +1,4 @@
-package com.chalmers.frapp;
+package com.chalmers.frapp.database;
 
 import java.security.InvalidParameterException;
 import java.util.Collection;
