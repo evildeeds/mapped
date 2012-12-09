@@ -172,10 +172,10 @@ public class Parser extends DefaultHandler {
     		} else if(localName.toLowerCase().equals("geopoint")) {
     			locationData.set(3, parseGeopoint(atts));
         		parseStack.add(new Pair<XMLTags, Object>(XMLTags.GEOPOINT, null));
-    		} else if(localName.toLowerCase().equals("descirption")) {
+    		} else if(localName.toLowerCase().equals("description")) {
     			parseStack.add(new Pair<XMLTags, Object>(XMLTags.DESCRIPTION, locationData));
     		} else {
-    			throw new SAXException("Unexpected tag: " + localName + ", expected entrance, category, geopoint or descirption.");
+    			throw new SAXException("Unexpected tag: " + localName + ", expected entrance, category, geopoint or description.");
     		}
     	}
     }
@@ -210,7 +210,7 @@ public class Parser extends DefaultHandler {
     		ArrayList<Object> locationData = (ArrayList<Object>) current.second;
     		Building b = (Building) parseStack.peekLast().second;
     		// Note: category is missing.
-    		b.addRoom((String) locationData.get(0), (String) locationData.get(4), (LinkedList<String>) locationData.get(1), (GeoPoint) locationData.get(2));
+    		b.addRoom((String) locationData.get(0), (String) locationData.get(4), (LinkedList<String>) locationData.get(1), (GeoPoint) locationData.get(3));
     	}
     }
  
