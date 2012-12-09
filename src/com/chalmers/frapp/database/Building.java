@@ -40,11 +40,9 @@ public class Building {
 	 * 
 	 * @param entranceID a String representing the entrance ID
 	 * @param streetAddress a String representing the street address
-	 * @param longitude an integer representing the longitude coordinate
-	 * @param latitude an integer representing the latitude coordinate
+	 * @param location an GeoPoint representing the GPS coordinate for the new Entrance
 	 */
-	public void addEntrence(String entranceID, String streetAddress, int longitude, int latitude) {
-		GeoPoint location = new GeoPoint(longitude, latitude);
+	public void addEntrance(String entranceID, String streetAddress, GeoPoint location) {
 		entrances.put(entranceID, new Entrance(streetAddress, location));
 	}
 
@@ -54,11 +52,9 @@ public class Building {
 	 * @param name a String representing the name of the new room
 	 * @param description a String representing a description of the new room
 	 * @param entranceIDs a List of entranceIDs recommended to reach the new room
-	 * @param longitude an integer representing the longitude coordinate
-	 * @param latitude an integer representing the latitude coordinate
+	 * @param location an GeoPoint representing the GPS coordinate for the new Room
 	 */
-	public void addRoom(String name, String description, List<String> entranceIDs, int longitude, int latitude) {
-		GeoPoint location = new GeoPoint(longitude, latitude);
+	public void addRoom(String name, String description, List<String> entranceIDs, GeoPoint location) {
 		rooms.put(name, new Room(name, description, entranceIDs, location));
 	}
 
@@ -101,8 +97,8 @@ public class Building {
 		if(roomObject != null) {
 			// Generate the result list by fetching all entrance IDs and resolving the entrance.
 			entranceList = new LinkedList<Entrance>();
-			for(String entrenceID : roomObject.getEntranceIDs()) {
-				entranceList.add(entrances.get(entrenceID));
+			for(String entranceID : roomObject.getEntranceIDs()) {
+				entranceList.add(entrances.get(entranceID));
 			}
 		} else {
 			throw new InvalidParameterException(roomName + " is not part of this building");
