@@ -1,23 +1,19 @@
 package com.chalmers.frapp.database;
 
 import com.google.android.maps.GeoPoint;
+import com.google.android.maps.OverlayItem;
 
-public class Entrance {
-
-	private final String streetAddress;
-	private final GeoPoint location;
+public class Entrance extends OverlayItem {
 
 	public Entrance(final String streetAddress, final GeoPoint location) {
-		// TODO Auto-generated constructor stub
-		this.streetAddress = streetAddress;
-		this.location = location;
+		super(location, "Entrance", streetAddress);
 	}
 
 	public String getStreetAddress() {
-		return streetAddress;
+		return getSnippet();
 	}
 
 	public GeoPoint getLocation() {
-		return location;
+		return getPoint();
 	}
 }

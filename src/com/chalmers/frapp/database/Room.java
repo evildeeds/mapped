@@ -2,34 +2,21 @@ package com.chalmers.frapp.database;
 
 import java.util.List;
 import com.google.android.maps.GeoPoint;
+import com.google.android.maps.OverlayItem;
 
 /**
  * This class represents information about a single room.
  */
-public class Room {
+public class Room extends OverlayItem {
 
-	/**
-	 * Room name.
-	 */
-	private final String name;
-	/**
-	 * Room description.
-	 */
-	private final String description;
 	/**
 	 * List of entrance IDs.
 	 */
 	private final List<String> entranceIDs;
-	/**
-	 * Room GPS location.
-	 */
-	private final GeoPoint location;
 	
 	public Room(String name, String description, List<String> entranceIDs, GeoPoint location) {
-		this.name = name;
-		this.description = description;
+		super(location, name, description);
 		this.entranceIDs = entranceIDs;
-		this.location = location;
 	}
 
 	/**
@@ -37,7 +24,7 @@ public class Room {
 	 * @return a String representing a room name
 	 */
 	public String getName() {
-		return name;
+		return getTitle();
 	}
 
 	/**
@@ -45,7 +32,7 @@ public class Room {
 	 * @return a String representing a description for this room
 	 */
 	public String getDescription() {
-		return description;
+		return getSnippet();
 	}
 
 	/**
@@ -61,6 +48,6 @@ public class Room {
 	 * @return a GeoPoint representing the location of this room
 	 */
 	public GeoPoint getLocation() {
-		return location;
+		return getPoint();
 	}
 }

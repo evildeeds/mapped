@@ -84,6 +84,16 @@ public class Building {
 	}
 
 	/**
+	 * Find a room given its name.
+	 * 
+	 * @param roomName a String representing a room name
+	 * @return a Room with the given name or null if no room was found
+	 */
+	public Room findRoom(String roomName) {
+		return rooms.get(roomName);
+	}
+	
+	/**
 	 * Find all recommended entrances for a given room.
 	 * 
 	 * @param roomName a String representing the name of a room in this building.
@@ -91,7 +101,7 @@ public class Building {
 	 * @throws InvalidParameterException if the room is not present in this building
 	 */
 	public List<Entrance> findEntrances(String roomName) throws InvalidParameterException {
-		Room roomObject = rooms.get(roomName);
+		Room roomObject = findRoom(roomName);
 		List<Entrance> entranceList = null;
 		// Verify that the given room actually is a part of this building.
 		if(roomObject != null) {
