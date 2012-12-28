@@ -31,6 +31,12 @@
             android:label="@string/title_activity_display_location"
             android:exported="false" >
         </activity>
+
+        <activity
+            android:name=".FRAPPPreferencesActivity"
+            android:label="@string/title_activity_preferences"
+            android:exported="false" >
+        </activity>
         
         <uses-library android:name="com.google.android.maps" />
 

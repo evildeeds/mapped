@@ -1,5 +1,6 @@
 package com.chalmers.frapp;
 
+import java.util.Set;
 import java.util.regex.Pattern;
 
 import com.chalmers.frapp.database.Building;
@@ -8,17 +9,23 @@ import com.chalmers.frapp.database.Parser;
 import com.chalmers.frapp.database.Room;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.*;
+import android.widget.AdapterView.OnItemSelectedListener;
 
-public class FindLocationActivity extends Activity implements TextWatcher {
+public class FindLocationActivity extends Activity implements TextWatcher, OnItemSelectedListener {
 
 	private static final Pattern splitPattern = Pattern.compile(",\\s");
 	private AutoCompleteTextView w;
+	private Spinner spinner;
 	private LocationDatabase db;
 	
     @Override
@@ -27,15 +34,21 @@ public class FindLocationActivity extends Activity implements TextWatcher {
         setContentView(R.layout.activity_find_location);
 
         try {
-        	Parser parser = new Parser(getAssets().open("chalmers.xml"));
+        	Parser parser = new Parser(getAssets().open(getDatabaseName()));
         	db = parser.getDatabase();
 
-        	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                    android.R.layout.simple_dropdown_item_1line, db.getStrings());
+        	final Set<String> allCategories = db.getAllCategories();
+        	String[] categoryArray = new String[allCategories.size()];
+        	allCategories.toArray(categoryArray);
+        	ArrayAdapter<String> adapterCategories = new ArrayAdapter<String>(this,
+        			android.R.layout.simple_spinner_dropdown_item, categoryArray);
 
+        	spinner = (Spinner) findViewById(R.id.spinner1);
+        	spinner.setAdapter(adapterCategories);
+        	spinner.setOnItemSelectedListener(this);
+        	
         	w = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1);
             w.setThreshold(1);
-            w.setAdapter(adapter);
             w.addTextChangedListener(this);
         } catch(Exception ex) {
         	ex.printStackTrace();
@@ -48,6 +61,17 @@ public class FindLocationActivity extends Activity implements TextWatcher {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case R.id.menu_settings:
+        	Intent prefsIntent = new Intent(this, FRAPPPreferencesActivity.class);
+        	startActivity(prefsIntent);
+            break;
+        }
+        return true;
+    }
+    
 	@Override
 	public void afterTextChanged(Editable s) {
 		String[] data = splitPattern.split(w.getText());
@@ -76,5 +100,28 @@ public class FindLocationActivity extends Activity implements TextWatcher {
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
 		// Empty
+	}
+
+	@Override
+	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
+			long arg3) {
+		String selected = (String) arg0.getSelectedItem();
+    	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, db.getStrings(selected));
+
+        w.setAdapter(adapter);		
+	}
+
+	@Override
+	public void onNothingSelected(AdapterView<?> arg0) {
+    	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, db.getStrings());
+
+        w.setAdapter(adapter);
+	}
+
+	private String getDatabaseName() {
+        SharedPreferences p = PreferenceManager.getDefaultSharedPreferences(this);
+        return p.getString(getString(R.string.pref_key_database), getString(R.string.pref_default_database));
 	}
 }

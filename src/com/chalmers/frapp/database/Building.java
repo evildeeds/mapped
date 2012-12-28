@@ -2,9 +2,11 @@ package com.chalmers.frapp.database;
 
 import java.security.InvalidParameterException;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 import com.google.android.maps.GeoPoint;
@@ -28,7 +30,7 @@ public class Building {
 	 * a room given its name.
 	 */
 	private final Map<String, Room> rooms;
-
+	
 	public Building(String buildingName) {
 		name = buildingName;
 		entrances = new TreeMap<String, Entrance>();
@@ -53,9 +55,12 @@ public class Building {
 	 * @param description a String representing a description of the new room
 	 * @param entranceIDs a List of entranceIDs recommended to reach the new room
 	 * @param location an GeoPoint representing the GPS coordinate for the new Room
+	 * @return The new room which was added to the this building
 	 */
-	public void addRoom(String name, String description, List<String> entranceIDs, GeoPoint location) {
-		rooms.put(name, new Room(name, description, entranceIDs, location));
+	public Room addRoom(String name, String description, List<String> entranceIDs, GeoPoint location) {
+		Room newRoom = new Room(name, description, entranceIDs, location);
+		rooms.put(name, newRoom);
+		return newRoom;
 	}
 
 	/**
@@ -83,6 +88,20 @@ public class Building {
 		return rooms.values();
 	}
 
+	/**
+	 * Get all rooms in this building which has the specified category.
+	 * @return a Collection of rooms in this building.
+	 */
+	public Collection<Room> getRooms(String category) {
+		List<Room> roomList = new LinkedList<Room>();
+		for(Room room : getRooms()) {
+			if(room.getCategories().contains(category)) {
+				roomList.add(room);
+			}
+		}
+		return roomList;
+	}
+	
 	/**
 	 * Find a room given its name.
 	 * 
@@ -114,5 +133,19 @@ public class Building {
 			throw new InvalidParameterException(roomName + " is not part of this building");
 		}
 		return entranceList;
+	}
+
+	/**
+	 * Get all room categories in this building.
+	 * 
+	 * @return A set of strings representing the names of all
+	 * categories in this building.
+	 */
+	public Set<String> getAvailableCategories() {
+		Set<String> availableRoomCategories = new HashSet<String>();
+		for(Room room : getRooms()) {
+			availableRoomCategories.addAll(room.getCategories());
+		}
+		return availableRoomCategories;
 	}
 }

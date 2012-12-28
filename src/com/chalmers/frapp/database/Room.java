@@ -1,6 +1,8 @@
 package com.chalmers.frapp.database;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.OverlayItem;
 
@@ -13,10 +15,23 @@ public class Room extends OverlayItem {
 	 * List of entrance IDs.
 	 */
 	private final List<String> entranceIDs;
-	
+	/**
+	 * Room categories.
+	 */
+	private final Set<String> roomCategories;
+
+	/**
+	 * Construct a new room.
+	 * 
+	 * @param name A string representing the name of the new room.
+	 * @param description A string representing a description for the new room.
+	 * @param entranceIDs A list of strings representing each entrance used to reach the new room.
+	 * @param location A GeoPoint representing the exact location of the new room.
+	 */
 	public Room(String name, String description, List<String> entranceIDs, GeoPoint location) {
 		super(location, name, description);
 		this.entranceIDs = entranceIDs;
+		this.roomCategories = new HashSet<String>();
 	}
 
 	/**
@@ -49,5 +64,14 @@ public class Room extends OverlayItem {
 	 */
 	public GeoPoint getLocation() {
 		return getPoint();
+	}
+
+	/**
+	 * Get a set of categories which this rooms belongs to.
+	 * @return A set of strings representing the names of all categories
+	 * which this room belongs to.
+	 */
+	public Set<String> getCategories() {
+		return roomCategories;
 	}
 }
