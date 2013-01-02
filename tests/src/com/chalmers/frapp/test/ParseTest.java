@@ -9,6 +9,11 @@ import com.chalmers.frapp.database.LocationDatabase;
 import com.chalmers.frapp.database.Parser;
 import com.chalmers.frapp.database.Room;
 
+/**
+ * Test class for testing the sanity of the parser implementation and
+ * verifying that the default shipped database can be parsed without
+ * errors.
+ */
 public class ParseTest extends AndroidTestCase {
 
 	public final static String enc_utf = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
