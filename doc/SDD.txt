@@ -1,15 +1,67 @@
-Date: 2012-12-09Version: 1.0WhatsUp System design document1 - Introduction	1.1 - Design goals	1.2 - Definitions, acronyms and abbreviations	1.3 - References2 - Proposed system architecture	2.1 - Overview	2.2 - Software decomposition		2.2.1 - General		2.2.2 - Tiers		2.2.3 - Communication		2.2.4 - Decomposition into subsystems		2.2.5 - Layering		2.2.6 - Dependency analysis	2.3 - Concurrency issues	2.4 - Persistent data management	2.5 - Access control and security	2.6 - Boundary conditions	2.7 - ReferencesAPPENDIX
-1 - Introduction
-The Frapp application is an android client to help you locate a certain room or building1.1 - Design goals
-Making it easier for students to find their way around campus.1.2 - Definitions, acronyms and abbreviations
+Date: 2012-12-09
+Version: 1.0
+Frapp System design document
+1 - Introduction
+	1.1 - Design goals
+	1.2 - Definitions, acronyms and abbreviations
+	1.3 - References
+2 - Proposed system architecture
+	2.1 - Overview
+	2.2 - Software decomposition
+		2.2.1 - General
+		2.2.2 - Tiers
+		2.2.3 - Communication
+		2.2.4 - Decomposition into subsystems
+		2.2.5 - Layering
+		2.2.6 - Dependency analysis
+	2.3 - Concurrency issues
+	2.4 - Persistent data management
+	2.5 - Access control and security
+	2.6 - Boundary conditions
+	2.7 - References
+APPENDIX
+
+1 - Introduction
+The Frapp application is an android client to help you locate a certain room or building
+1.1 - Design goals
+Making it easier for students to find their way around campus.
+1.2 - Definitions, acronyms and abbreviations
 Building Annotation: Draw on set map, showing entrance(s)
-1.3 - ReferencesN/A2 - Proposed system architecture	2.1 - Overview
+1.3 - References
+N/A
+2 - Proposed system architecture
+	2.1 - Overview
 	The android client will show annotations on the map according to the name from our XML. 
-	It get the coordinates from the, parser to the database, then find the relevant information from the database	2.2 - Software decomposition	2.2.1 - General
+	It get the coordinates from the, parser to the database, then find the relevant information from the database
+	2.2 - Software decomposition
+	2.2.1 - General
 	We have two activities and a module with parsing and a XML database
-	Date: 2012-12-09	Version: 1.0	2.2.2 - Tiers	● Application	2.2.3 - Communication
+	Date: 2012-12-09
+	Version: 1.0
+	2.2.2 - Tiers
+	● Application
+	2.2.3 - Communication
 	A module that uses google service to establish where you are and what you are looking for.
-	2.2.4 - Decomposition into subsystems	● All activities	● Data provider	● Network layer	● Server	2.2.5 - Layering	N/A	Date: 2012-12-09	Version: 1.0	2.2.6 - Dependency analysis	2.3 - Concurrency issues	N/A	2.4 - Persistent data management
+	2.2.4 - Decomposition into subsystems
+	● All activities
+	● Data provider
+	● Network layer
+	● Server
+	2.2.5 - Layering
 	N/A
-	2.5 - Access control and security	N/A
-	2.6 - Boundary conditions	N/A	2.7 - References	APPENDIX	Date: 2012-12-09	Version: 1.0	N/A
+	Date: 2012-12-09
+	Version: 1.0
+	2.2.6 - Dependency analysis
+	2.3 - Concurrency issues
+	N/A
+	2.4 - Persistent data management
+	N/A
+	2.5 - Access control and security
+	N/A
+	2.6 - Boundary conditions
+	N/A
+	2.7 - References
+	APPENDIX
+	Date: 2012-12-09
+	Version: 1.0
+	N/A
