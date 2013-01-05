@@ -32,9 +32,7 @@ public class ParseTest extends AndroidTestCase {
 	public final void testParser1() {
 		try {
 			Parser p = new Parser((InputStream) new ByteArrayInputStream(enc_utf.getBytes()));
-			// Upon "success" the database should be present.
-			// however since the previous line must fail this test is redundant.
-			assertNotNull(p.getDatabase());
+			// Always fail since the SAX parser should have thrown an error.
 			assertTrue(false);
 		} catch(Exception ex) {
 			assertTrue(true);
@@ -49,6 +47,7 @@ public class ParseTest extends AndroidTestCase {
 		try {
 			Parser p = new Parser((InputStream) new ByteArrayInputStream(xml1.getBytes()));
 			LocationDatabase ld = p.getDatabase();
+			// Upon "success" the database should be present.
 			assertNotNull(ld);
 			assertEquals(0, ld.getBuildings().size());
 			assertEquals(0, ld.getAllCategories().size());
@@ -106,7 +105,6 @@ public class ParseTest extends AndroidTestCase {
 			Parser p = new Parser(getContext().getAssets().open("chalmers.xml"));
 			assertNotNull(p.getDatabase());
 			// Note: don't test the parsed content as it may be subjected to change.
-			assertTrue(true);
 		} catch(Exception ex) {
 			assertTrue(false);
 		}
