@@ -1,8 +1,10 @@
 package com.chalmers.frapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 
 import com.chalmers.frapp.database.LocationDatabase;
@@ -28,10 +30,9 @@ public class DisplayLocationActivity extends MapActivity {
 
 		Parser parser;
         try {
-        	parser = new Parser(getAssets().open("chalmers.xml"));
+        	parser = new Parser(getAssets().open(getDatabaseName()));
         } catch(Exception ex) {
-        	ex.printStackTrace();
-        	parser = null;
+        	throw new RuntimeException(ex);
         }
         LocationDatabase db = parser.getDatabase();
         Drawable drawable = getResources().getDrawable(R.drawable.pin);
@@ -72,5 +73,10 @@ public class DisplayLocationActivity extends MapActivity {
 		myLocation.disableCompass();
 		myLocation.disableMyLocation();
 		super.onPause();
+	}
+
+	private String getDatabaseName() {
+        SharedPreferences p = PreferenceManager.getDefaultSharedPreferences(this);
+        return p.getString(getString(R.string.pref_key_database), getString(R.string.pref_default_database));
 	}
 }
