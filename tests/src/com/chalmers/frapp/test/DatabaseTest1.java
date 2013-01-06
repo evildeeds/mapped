@@ -32,7 +32,7 @@ public class DatabaseTest1 extends AndroidTestCase {
 	/**
 	 * Verify that a building can be added and is accessible.
 	 */
-	public final void testDatabase1() {
+	public final void testBasicBuilding() {
 		Building b = ld.addBuilding(buildingname);
 		assertEquals(1, ld.getBuildings().size());
 		assertTrue(ld.getBuildings().contains(b));
@@ -43,7 +43,7 @@ public class DatabaseTest1 extends AndroidTestCase {
 	 * Verify that a building and a location (room) can be
 	 * added, is accessible and contains correct data.
 	 */
-	public final void testDatabase2() {
+	public final void testBasicLocation() {
 		Building b = ld.addBuilding(buildingname);
 		Room r = b.addRoom(roomname, roomdescription, emptylist, testpoint);
 		assertEquals(1, b.getRooms().size());

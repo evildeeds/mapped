@@ -2,6 +2,7 @@ package com.chalmers.frapp.test;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 import android.test.AndroidTestCase;
 
@@ -52,7 +53,7 @@ public class DatabaseTest2 extends AndroidTestCase {
 	/**
 	 * Verify that all building are present.
 	 */
-	public final void testDatabase1() {
+	public final void testBuildings() {
 		assertEquals(2, ld.getBuildings().size());
 		assertTrue(ld.getBuildings().contains(b1));
 		assertTrue(ld.getBuildings().contains(b2));
@@ -61,7 +62,7 @@ public class DatabaseTest2 extends AndroidTestCase {
 	/**
 	 * Verify that all categories are present.
 	 */
-	public final void testDatabase2() {
+	public final void testCategories() {
 		assertEquals(2, ld.getAllCategories().size());
 		assertTrue(ld.getAllCategories().contains(categoryname1));
 		assertTrue(ld.getAllCategories().contains(categoryname2));
@@ -71,27 +72,22 @@ public class DatabaseTest2 extends AndroidTestCase {
 	 * Verify that the locations were correctly added to the
 	 * buildings.
 	 */
-	public final void testDatabase3() {
+	public final void testLocations() {
 		assertEquals(2, b1.getRooms().size());
 		assertEquals(1, b2.getRooms().size());
 		assertTrue(b1.getRooms().contains(r1));
 		assertTrue(b1.getRooms().contains(r2));
 		assertTrue(b2.getRooms().contains(r3));
-	}
 
-	/**
-	 * Verify that all rooms are present.
-	 */
-	public final void testDatabase4() {
 		assertTrue(r1 == b1.findRoom(roomname1));
 		assertTrue(r2 == b1.findRoom(roomname2));
 		assertTrue(r3 == b2.findRoom(roomname3));
-	 }
+	}
 	
 	/**
 	 * Verify that categories are working as intended.
 	 */
-	public final void testDatabase5() {
+	public final void testBasicCategorySearch() {
 		assertEquals(2, b1.getRooms(categoryname1).size());
 		assertEquals(1, b1.getRooms(categoryname2).size());
 		assertEquals(0, b2.getRooms(categoryname1).size());
@@ -103,4 +99,18 @@ public class DatabaseTest2 extends AndroidTestCase {
 		assertTrue(b2.getRooms(categoryname2).contains(r3));
 	}
 
+	/**
+	 * Verify that all location identifiers are present, unique and
+	 * cannot be modified.
+	 */
+	public final void testLocationIdentifiers() {
+		List<String> idlist = ld.getStrings();
+		ListIterator<String> iter = idlist.listIterator();
+		while(iter.hasNext()) {
+			String id = iter.next();
+			iter.remove();
+			assertFalse(idlist.contains(id));
+		}
+		assertEquals(3, ld.getStrings().size());
+	}
 }
