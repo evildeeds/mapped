@@ -29,12 +29,10 @@ public class ParseTest extends AndroidTestCase {
 	/**
 	 * The SAX parser requires at least one XML element.
 	 */
-	public final void testParser1() {
+	public final void testEmpty() {
 		try {
-			Parser p = new Parser((InputStream) new ByteArrayInputStream(enc_utf.getBytes()));
-			// Upon "success" the database should be present.
-			// however since the previous line must fail this test is redundant.
-			assertNotNull(p.getDatabase());
+			Parser p = new Parser((InputStream) new ByteArrayInputStream("".getBytes()));
+			// Always fail since the SAX parser should have thrown an error.
 			assertTrue(false);
 		} catch(Exception ex) {
 			assertTrue(true);
@@ -42,13 +40,26 @@ public class ParseTest extends AndroidTestCase {
 	}
 
 	/**
+	 * The SAX parser requires at least one XML element.
+	 */
+	public final void testAlmostEmpty() {
+		try {
+			Parser p = new Parser((InputStream) new ByteArrayInputStream(enc_utf.getBytes()));
+			assertTrue(false);
+		} catch(Exception ex) {
+			assertTrue(true);
+		}
+	}
+	
+	/**
 	 * A document with only an empty building list is a valid
 	 * database without any buildings, rooms or categories.
 	 */
-	public final void testParser2() {
+	public final void testNoBuildings() {
 		try {
 			Parser p = new Parser((InputStream) new ByteArrayInputStream(xml1.getBytes()));
 			LocationDatabase ld = p.getDatabase();
+			// Upon "success" the database should be present.
 			assertNotNull(ld);
 			assertEquals(0, ld.getBuildings().size());
 			assertEquals(0, ld.getAllCategories().size());
@@ -60,7 +71,7 @@ public class ParseTest extends AndroidTestCase {
 	/**
 	 * Verify that empty buildings can be read and found.
 	 */
-	public final void testParser3() {
+	public final void testEmptyBuilding() {
 		try {
 			Parser p = new Parser((InputStream) new ByteArrayInputStream(xml2.getBytes()));
 			LocationDatabase ld = p.getDatabase();
@@ -79,7 +90,7 @@ public class ParseTest extends AndroidTestCase {
 	/**
 	 * Verify that a building with a location (room) and entrance can be read.
 	 */
-	public final void testParser4() {
+	public final void testBasicLocation() {
 		try {
 			Parser p = new Parser((InputStream) new ByteArrayInputStream(xml3.getBytes()));
 			LocationDatabase ld = p.getDatabase();
@@ -101,12 +112,11 @@ public class ParseTest extends AndroidTestCase {
 	 * Test that the bundled "chalmers.xml" can be parsed, failure here
 	 * is likely due to that the file is incorrect. 
 	 */
-	public final void testParser5() {
+	public final void testParseProvidedAsset() {
 		try {
 			Parser p = new Parser(getContext().getAssets().open("chalmers.xml"));
 			assertNotNull(p.getDatabase());
 			// Note: don't test the parsed content as it may be subjected to change.
-			assertTrue(true);
 		} catch(Exception ex) {
 			assertTrue(false);
 		}
