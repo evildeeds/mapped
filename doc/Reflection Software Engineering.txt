@@ -1,20 +1,24 @@
 Reflection Software Engineering Waterfall
 
-This is an interesting technique which makes me think of another course we had over the year DKGG (Design och konstruktion av grafiska gränssnitt) that you do paper prototyping before you start almost anything, cutting up the process.
+This is an interesting technique which makes me think of another course we had over the year 
+DKGG (Design och konstruktion av grafiska grÃ¤nssnitt) that you do paper prototyping before you start almost anything, cutting up the process.
 Because when I hear waterfall I see the structure, do one thing and finish it before you go to the next part. 
 
-Which makes things easier, cause you only do one part at a time, then when you’re done, you fall down to the next step and do that until it’s finished with it.
+Which makes things easier, cause you only do one part at a time, then when you're done, you fall down to the next step and do that until it's finished with it.
 
 Saying it makes things easier is both true and a false. 
 
-* Because it is really hard to make specifics that you know is not going to be implemented because it’s too difficult, especially in this scenario when we had a new platform to work with (Android).
+* Because it is really hard to make specifics that you know is not going to be implemented because it's too difficult, 
+especially in this scenario when we had a new platform to work with (Android).
 A possible solution would be different groups for some steps, but also makes problems with communication and how they were thinking.
 
-Things that make our project not look “Waterfall”, is because of the reason listed * 
-Also when we lost a member, time ran out faster than expected, you merge them together to make do (that happened mostly at the end, we have been following waterfall all along, just a bit short on the cases). 
-Which is also a thing, the homepage have not been responsive towards our project, going down all the time and with a teacher that don’t get our mail for some reason. 
+Things that make our project not look "Waterfall", is because of the reason listed * 
+Also when we lost a member, time ran out faster than expected, you merge them together to make do (that happened mostly at the end, we have been 
+following waterfall all along, just a bit short on the cases). 
+Which is also a thing, the homepage have not been responsive towards our project, going down all the time and with a teacher that don't get our mail for some reason. 
 
 
 
 Conclusion:
-I like waterfall, because it makes the structure of a project stand out much easier and by that I mean you can tell how the project is doing and what it is about at an early stage. If you can keep yourself from going faster then you’re supposed to do in your mind.
+I like waterfall, because it makes the structure of a project stand out much easier and by that I mean you can 
+tell how the project is doing and what it is about at an early stage. If you can keep yourself from going faster then you're supposed to do in your mind.

@@ -4,13 +4,17 @@ It started with us looking at what each of us could do before, we had one that u
 At the beginning we started looking into all the new things that the teacher recommended for the course, trying to understand all of them.
 Thinking we would just split it three ways and just go with it.
 That would work if everyone participates in doing their part.
-Unfortunately for us we didn’t realize his laziness until it was too late, which made it a lot harder to fill the rest of the things that were missing in the short time that was left, and the teacher was really not making things easier, getting answers for questions took weeks or remained unanswered (which is still a problem now, I’m sorry to mention in a lot, but it takes its toll when we get no answers at all).
+Unfortunately for us we didn't realize his laziness until it was too late, which made it a lot harder to fill the rest of the things that were 
+missing in the short time that was left, and the teacher was really not making things easier, getting answers for questions took weeks or 
+remained unanswered (which is still a problem now, I'm sorry to mention in a lot, but it takes its toll when we get no answers at all).
 When we wanted to progress with the lost member, time became thinner and thinner.
 So we divided the work Programming/documentation, because they seemed equal.
- And now I’m touching up our battered documents with the best I can do.
+ And now I'm touching up our battered documents with the best I can do.
 
 
 Conclusion:
-Should have been much smoother if we did the course at the time it’s suppose to be (easier to get another teammate, talks with the teacher/coaches), cause this have been a hassle, many things looked interesting and I’d love to look into them some more (github (had some unexpected errors and I’d like to know why), emma(from what I’ve seen, it is really useful but hard to understand at first) etc.), but time is running out so I will do it when we’re done.
+Would have been much smoother if we did the course at the right time (easier to get another teammate, talks with the teacher/coaches).
+Cause this have been a hassle, many things looked interesting and I'd love to look into them some more (github (had some unexpected errors 
+and I'd like to know why), emma(from what I've seen, it is really useful but hard to understand at first) etc.), but time is running out so I will do it when we're done.
 
 
