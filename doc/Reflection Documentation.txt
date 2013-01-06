@@ -1,0 +1,10 @@
+Reflection Documentation
+Textedit, Textmate, Microsoft office (and dropbox)
+I’ve been going through a number of different text editors, number one reason for that is I use a Mac computer at school and an ordinary computer at home.
+I started using Textmate, since I love that you can write your code when you program, and the editor can change according to recognized language. Of course you can write normal text with it, but it clashed when I wanted to work on the documents at home, even though it was a .txt it had some bugs, not recognizing some letters, it was probably a update I was missing, but I changed since I used a free version that had gone out of date. 
+Then I went to textedit and stuck with it since it worked. 
+Then we used git-hub to handle our docs with different branches, so everyone could watch what was written, problems that came because of that, were that we merged the wrong branch or we weren’t in the master branch, so we had to fix it a few times. Smartgit was one tool that we found to help with git, but it didn’t work for my Mac so it got forgotten.
+
+Conclusion: 
+Which made me wonder if there is other useful tool that could compliment git, or just another in the whole that can do everything better.
+
