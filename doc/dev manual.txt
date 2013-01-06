@@ -1,0 +1,5 @@
+Using FRAPP is easy after installing FRAPP on your android device, simply start FRAPP using the application launcher and enter a location name.
+
+While entering a name FRAPP will display all location matching the selected category, known locations which matches the currently entered. The empty category matches all locations, location names are formatted by pre-appending the building name onto the local location name. When an entered string matches a known location you will immediately be taken to the map view where both your current GPS location and your destination is displayed.
+
+From the map view it is possible to both zoom and pan to towards both your location and destination. After obtaining a suitable view of the destination you may now begin your journey.

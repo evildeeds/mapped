@@ -1,0 +1,11 @@
+User Manual - Frapp
+Our Application tends to new and old students who can't find their way around campus.
+Because at all ages, when you get a room or building you haven't been in. 
+You must look it up one way or another.
+And this is how we help you:
+
+* 	By just knowing the name of a room, you simply put that into Frapp and it will 
+	show you on a map where you should go and where you are at
+
+* 	An even faster way is to put a room/building onto your clipboard and start Frapp, 
+	because it will recognize a valid room/building and show you immediately on the map. 
