@@ -43,55 +43,103 @@ The user starts frapp
 2.3 - User related requirements
 2.3.1 - Location-related requirements
 
-2.3.1.1 - View Search
-Scenario: View search fields
-Trigger: Starting FRAPP
-Precondition: An input box for finding locations is displayed.
-Basic path
-The user starts frapp, shows a search field for rooms and buildings.
-2.3.1.2 - View Map
-Scenario: View Map
-Trigger: Starting FRAPP
-Precondition: The starting intent contains a valid location.
-Basic path
-Will go directly to map showing the room/building chosen location.
-2.3.1.3 - View Map
-Scenario: View Map
-Trigger: Starting FRAPP
-Precondition: The starting intent contains an invalid location.
-Basic path
-Will go directly to the search field filled with the provided location.
-2.3.1.4 - View Map
-Scenario: View map
-Trigger: Swiping the map
-Precondition: The map view is active
-Basic path
-Moves from the map to the search field, with a right-to-left swipe
-2.3.1.5
-Scenario: View Search
-Trigger: The search fields are correctly filled and you pressed the "go button"
-Precondition: The search activity is active
-Basic path
-The user selects from the fields and goes to the map.
-2.3.1.6
-Scenario: View Search
-Trigger: Swiping from left-to-right 
-Precondition: The search field is correctly filled.
-Basic path
-Goes back to Map from Search, in case you accidently returned to Search from Map.
-2.3.1.7
-Scenario: View Search
-Trigger: Swiping from left-to-right 
-Precondition: The search field is incorrectly filled.
-Basic path
-Nothing happens.
-2.3.1.8
-Scenario: View map
-Trigger: Use two fingers pulling together/apart
-Precondition: The map activity is active
-Basic path
-Zooms in or out depending how you move your fingers.
+2.3.1.1 - Title: Startup
+Precondition: User starts the Frapp
+Post condition: User enter Search view 
+Description: The user is shown the Search fields
+Dependencies: None
+Rationale: Shows which app started
 
+2.3.1.2 - Title: Favorite
+Precondition:  User is on the map and selects an annotation
+Post condition:  A small description come up with a few options
+Description: The user gets information about the room/building with options on what to do with it
+Dependencies: That a room is selected and plotted on the map
+Rationale: If you have a hard time remember a place in the beginning, just mark it to get easy access from the search view 
+
+2.3.1.3 - Title: Remove favorite
+Precondition: Select options in search view
+Post condition: All favorites comes up with a checkout box
+Description: When you get new favorites and want to remove the old ones to make it optimized
+Dependencies: That favorites isn’t empty
+Rationale: A compliment to favorite, can’t just add things without a removal
+
+2.3.1.4 - Title: Add schedule 
+Precondition: Search view, clicking browsing for online calendar 
+Post condition: A box with the path to the calendar website appears
+Description: User has the path ready in the clipboard
+Dependencies: Has an approved calendar that Frapp approves
+Rationale: To be able to put your entire weeks calendar with ease and just look at the map to see where you need to be.
+
+2.3.1.5 - Title:  Beep
+Precondition: User has a room/building on the map
+Post condition: A box appear with a message
+Description: When the user gets into a 20meter radius of the actual position, it gives a mild indication that it is close
+Dependencies: must have an active point on the map
+Rationale: If you are in a hurry and know in what direction the “goal” is in, you can run until you hear the sound and then start looking around 
+
+2.3.1.6 - Title: Easy find
+Precondition: User enters a building while looking for a room
+Post condition: A schematics of the floor appears
+Description: The user can easy figure out a room by looking at the floor schematic
+Dependencies: When you enter any of the entrance points it changes map layer
+Rationale: A solution to our problem when users enter building and get a bad reception with the satellites 
+
+2.3.1.7 - Title: Wrong
+Precondition: User searched for a valid room/building
+Post condition: Failed to find the set room/building
+Description: If a user can’t seem to locate the named room/building, he or she can restart to get better values on positions
+Dependencies: None
+Rationale: When the user know that the position is not correct
+ 
+2.3.1.8 - Title: Empty
+Precondition: The search field is incorrectly filled
+Post condition: Stay at the search fields
+Description: Nothing happens
+Dependencies: None
+Rationale: The user can’t get to the map without valid room/building name
+
+2.3.1.9 - Title: Search
+Precondition: Filled a correct room/building
+Post condition: Shows map with target location
+Description: The user chooses a room/building and presses go
+Dependencies: None
+Rationale: Search for a room/building
+
+2.3.1.10 - Title: Swipe map-search
+Precondition: map view is active
+Post condition: search view is active
+Description: Moves from the map to the search fields with a right-to-left swipe
+Dependencies: None
+Rationale: So the user can easily switch between views
+
+2.3.1.11 - Title: Swipe search-map
+Precondition: Search view is active
+Post condition: Map view is active
+Description: Moves from the search fields to the map
+Dependencies: A valid location is needed in the search fields
+Rationale: A fast “go” button, or go back to the map if you missclicked
+
+2.3.1.12 - Title: Zoom
+Precondition: The map view is active
+Post condition: Zooms in or out
+Description: The user uses two fingers to pull together / apart to zoom in / zoom out
+Dependencies: None
+Rationale: To get a closer look on the map or location
+
+2.3.1.13 - Title: Direct map
+Precondition: The starting intent contains a valid location
+Post condition: starts the map view
+Description:Will go directly to map showing  that rooms/buildings location
+Dependencies: Clipboard contains either a room or a building that is listed in Frapp 
+Rationale: Helps the user fast get to a room/building
+
+2.3.1.14 - Title: No search
+Precondition: The starting intent contains an invalid location
+Post condition: Starts the search view
+Description: The user is shown the search fields
+Dependencies: None
+Rationale: If you have something in your clipboard that isn’t part of the listed rooms/buildings, you start from the beginning
 
 2.4 Non-functional requirements
 2.4.1 FRAPP shall be selectable as a location finder on Android.
