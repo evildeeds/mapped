@@ -24,7 +24,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 public class FindLocationActivity extends Activity implements TextWatcher, OnItemSelectedListener {
 
 	private static final Pattern splitPattern = Pattern.compile(",\\s");
-	private AutoCompleteTextView w;
+	private AutoCompleteTextView textbox;
 	private Spinner spinner;
 	private LocationDatabase db;
 	
@@ -38,20 +38,23 @@ public class FindLocationActivity extends Activity implements TextWatcher, OnIte
         	db = parser.getDatabase();
 
         	final Set<String> allCategories = db.getAllCategories();
-        	String[] categoryArray = new String[allCategories.size()];
+        	String[] categoryArray = new String[allCategories.size() + 1];
         	allCategories.toArray(categoryArray);
+        	categoryArray[allCategories.size()] = "";
         	ArrayAdapter<String> adapterCategories = new ArrayAdapter<String>(this,
         			android.R.layout.simple_spinner_dropdown_item, categoryArray);
 
         	spinner = (Spinner) findViewById(R.id.spinner1);
         	spinner.setAdapter(adapterCategories);
         	spinner.setOnItemSelectedListener(this);
-        	
-        	w = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1);
-            w.setThreshold(1);
-            w.addTextChangedListener(this);
+
+        	textbox = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1);
+            textbox.setThreshold(1);
+            textbox.addTextChangedListener(this);
+            
+            spinner.setSelection(allCategories.size());
         } catch(Exception ex) {
-        	ex.printStackTrace();
+        	throw new RuntimeException(ex);
         }
     }
 
@@ -74,7 +77,7 @@ public class FindLocationActivity extends Activity implements TextWatcher, OnIte
     
 	@Override
 	public void afterTextChanged(Editable s) {
-		String[] data = splitPattern.split(w.getText());
+		String[] data = splitPattern.split(textbox.getText());
 		if(data.length == 2) {
 			Building b = db.findBuilding(data[0]);
 			Room r = null;
@@ -106,20 +109,27 @@ public class FindLocationActivity extends Activity implements TextWatcher, OnIte
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3) {
 		String selected = (String) arg0.getSelectedItem();
-    	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, db.getStrings(selected));
-
-        w.setAdapter(adapter);		
+        updateList(selected);
 	}
 
 	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
-    	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, db.getStrings());
-
-        w.setAdapter(adapter);
+		updateList("");
 	}
 
+	private void updateList(String category) {
+		ArrayAdapter<String> adapter;
+		if(category.isEmpty()) {
+			adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, db.getStrings(category));
+		} else {
+			adapter = new ArrayAdapter<String>(this,
+	                android.R.layout.simple_dropdown_item_1line, db.getStrings());
+		}
+
+        textbox.setAdapter(adapter);
+	}
+	
 	private String getDatabaseName() {
         SharedPreferences p = PreferenceManager.getDefaultSharedPreferences(this);
         return p.getString(getString(R.string.pref_key_database), getString(R.string.pref_default_database));

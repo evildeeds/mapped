@@ -4,7 +4,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">FRAPP</string>
-    <string name="title_activity_display_location">Display Location</string>
+    <string name="title_activity_display_location">FRAPP - Location</string>
 	<string name="title_activity_preferences">FRAPP Settings</string>
     <string name="pref_summary_database">The database file used</string>
     <string name="pref_title_database">Database</string>
